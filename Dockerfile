@@ -8,6 +8,7 @@ WORKDIR /
 # coreutils -> need REAL chown and chmod for dhclient (it uses reference option not supported in busybox)
 RUN apk add --no-cache coreutils dnsmasq iproute2 bind-tools dhclient
 
+COPY config /default_config
 COPY config /config
 COPY bin /bin
 CMD [ "/bin/entry.sh" ]

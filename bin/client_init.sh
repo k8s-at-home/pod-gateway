@@ -1,6 +1,8 @@
 #!/bin/sh -ex
 
 # Load main settings
+cat /config/default_settings.sh
+. /config/default_settings.sh
 cat /config/settings.sh
 . /config/settings.sh
 
@@ -19,7 +21,6 @@ fi
 # Delete default GW to prevent outgoing traffic to leave this docker
 echo "Deleting existing default GWs"
 ip route del 0/0 || /bin/true
-
 
 # After this point nothing should be reachable -> check
 if ping -c 1 -W 1000 8.8.8.8; then

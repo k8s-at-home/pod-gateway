@@ -1,5 +1,8 @@
 #!/bin/sh -ex
 
+# Load main settings
+cat /config/default_settings.sh
+. /config/default_settings.sh
 cat /config/settings.sh
 . /config/settings.sh
 
